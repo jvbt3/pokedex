@@ -1,22 +1,26 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:pokedex/repository/pokemon_repository.dart';
+import 'package:pokedex/routes/routes.dart';
 
-void main() => runApp(const MyApp());
-
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.red,
-          centerTitle: true,
-          title: const Text('Pokedex'),
-        ),
+      title: 'Pokedex 2k23',
+      theme: ThemeData(
+        primarySwatch: Colors.red,
       ),
+      debugShowCheckedModeBanner: false,
+      home: PokeRoutes(
+        iPokemonRepository: PokemonRepository(dio: Dio()),
+      ),
+      initialRoute: '/',
+
     );
   }
 }
