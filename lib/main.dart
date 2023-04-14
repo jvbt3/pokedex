@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:pokedex/repository/pokemon_repository.dart';
 import 'package:pokedex/routes/routes.dart';
 

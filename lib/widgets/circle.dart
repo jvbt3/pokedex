@@ -6,15 +6,15 @@ class Circle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: const <Widget>[
-        Padding(
+      children: <Widget>[
+        const Padding(
           padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
           child: CircleAvatar(
             radius: 57,
             backgroundColor: Colors.black,
             child: CircleAvatar(
               radius: 55,
-              backgroundColor: Colors.red,
+              backgroundColor: Colors.white,
               child: CircleAvatar(
                 radius: 52,
                 backgroundColor: Colors.black,
@@ -28,6 +28,46 @@ class Circle extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Row(
+            children: const [
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: CircleAvatar(
+                  radius: 12,
+                  backgroundColor: Colors.black,
+                  child: CircleAvatar(
+                    radius: 10,
+                    backgroundColor: Colors.red,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: CircleAvatar(
+                  radius: 12,
+                  backgroundColor: Colors.black,
+                  child: CircleAvatar(
+                    radius: 10,
+                    backgroundColor: Colors.yellowAccent,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: CircleAvatar(
+                  radius: 12,
+                  backgroundColor: Colors.black,
+                  child: CircleAvatar(
+                    radius: 10,
+                    backgroundColor: Colors.lightGreenAccent,
+                  ),
+                ),
+              ),
+            ],
           ),
         )
       ],
