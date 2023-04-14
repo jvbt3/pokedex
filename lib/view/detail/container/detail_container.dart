@@ -5,7 +5,6 @@ import '../../../models/pokemon_model.dart';
 import '../../../repository/pokemon_repository.dart';
 import '../../../widgets/error_view.dart';
 
-
 class DetailArguments {
   final String name;
 
@@ -13,9 +12,8 @@ class DetailArguments {
 }
 
 class DetailContainer extends StatelessWidget {
-  const DetailContainer({Key? key,
-    required this.iPokemonRepository,
-    required this.arguments})
+  const DetailContainer(
+      {Key? key, required this.iPokemonRepository, required this.arguments})
       : super(key: key);
 
   final IPokemonRepository iPokemonRepository;
@@ -23,14 +21,17 @@ class DetailContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<Pokemon>> (
+    return FutureBuilder<List<Pokemon>>(
         future: iPokemonRepository.getAllPokemons(),
         builder: (ctx, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const LoadingView();
           } else if (snapshot.connectionState == ConnectionState.done &&
               snapshot.hasData) {
-            return DetailView(name: arguments.name, list: [],);
+            return DetailView(
+              name: arguments.name,
+              list: const [],
+            );
           } else if (snapshot.hasError) {
             return ErrorView(error: snapshot.error.toString());
           } else {
